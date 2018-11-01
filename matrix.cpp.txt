@@ -1,0 +1,139 @@
+#include "matrix.h"
+#include <iostream>
+using namespace std ;
+
+matrix :: matrix (int row, int col, int num[])
+{
+    this -> row = row;
+    this -> col = col;
+    this-> data = new int [row * col];
+    for (int i = 0; i < row * col; i++)
+        this ->data [i] = num [i];
+}
+
+matrix:: matrix ()
+{
+    data = new int[0] ;
+    row =0 ;
+    col = 0;
+}
+matrix :: matrix(const matrix &mat,int num[])
+{
+    row = mat.row;
+    col = mat.col;
+    data = new int [row*col];
+    for (int i = 0; i < row * col; i++)
+        mat.data [i] = num [i];
+}
+matrix matrix :: ostream& operator<< (ostream& out, matrix mat);
+
+for (int i=0; i<mat.row; i++)
+    {
+       for(int j=0 ; j<mat.col ; j++){
+            out<< mat.data[i][j]<<"  ";
+    }
+        out<<endl;
+    }
+    return out ; 
+    
+matrix matrix ::   bool  operator== (matrix mat1, matrix mat2);	// True if identical
+
+{
+    if (mat1.col == mat2.col && mat1.row == mat2.row)
+    {
+        int cont = 0;
+        for (int i =0 ; i < mat1.col * mat1.row ; i++)
+        {
+            if (mat1.data[i] == mat2.data[i])
+            {
+                cont++;
+            }
+            else
+            {
+                return false;
+                break;
+            }
+        } 
+        if (cont == mat1.col * mat1.row)
+        {
+            return true;
+        }
+    }
+}
+matrix matrix :: bool   operator!= (matrix mat1, matrix mat2);
+if (mat1.col != mat2.col && mat1.row != mat2.row)
+    {
+        int cont = 0;
+        for (int i =0 ; i < mat1.col * mat1.row ; i++)
+        {
+            if (mat1.data[i] != mat2.data[i])
+            {
+                cont++;
+            }
+            else
+            {
+                return false;
+                break;
+            }
+        }
+
+        if (cont != mat1.col * mat1.row)
+        {
+            return true;
+        }
+    }
+}
+
+matrix matrix :: bool   isSquare   (matrix mat);  // True if square matrix
+if (mat.row == mat.col)
+{
+    int cont = 0
+     for( int i=0;i<mat.row  ;i++ )
+{
+       for (int j=0;j<mat.col ;j++)  { 
+       if (mat.data[i][j] == mat.data[i][j])
+       {
+       cont++;
+       }
+       else
+        {
+        return false;
+        break;
+    } return true;
+       }}}
+        
+}
+matrix matrix :: bool   isSymetric (matrix mat);  // True if square and symmetric
+
+for(int i=0; i<mat.row ;i++)
+{   
+    for(int j=0; j<mat.col ;j++)
+{
+      if(mat.data[j][i]== mat.data[i][j]&& i==j)
+    cout<<"Symetric and square  Matrix"<<endl;
+    return true;
+    
+    else
+    cout<<"Not Symetric and square  Matrix"<<endl;
+  return false;
+}} return mata.data ;
+ 
+
+matrix matrix :: bool   isIdentity (matrix mat);  // True if square and identity 
+      
+    for (int i= 0; i<mat.row ;i++) 
+    { 
+        for (int i= 0; i<mat.col ;i++) 
+        { 
+            if (mat.row == mat.col) 
+                cout<<("  ", 1); 
+            else
+                cout<<("  ", 0)<<endl; 
+        }  
+    }
+    return 0; 
+} 
+matrix matrix :: matrix transpose(matrix mat);    // Return new matrix with the transpose
+for (int i = 0; i < mat.row; i++)
+    for (int j = 0; j <mat.col; j++)
+      mat.data[i][j] = num[i *mat.col + j];

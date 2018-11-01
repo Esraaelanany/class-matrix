@@ -1,0 +1,26 @@
+#ifndef MATRIX_H
+#define MATRIX_H
+#include <iostream>
+#include <iomanip>
+using namespace std;
+class matrix
+{
+public:
+    int* data;       
+    int row, col;
+    matrix ();
+    matrix (int row, int col, int num[]);
+
+    matrix(const matrix &mat,int num[]);
+int& item(matrix mat,int row,int col);
+    
+    matrix operator<< (ostream& out, matrix mat);
+    matrix operator== (matrix mat1, matrix mat2);
+    matrix operator!= (matrix mat1, matrix mat2);
+    matrix isSquare   (matrix mat);
+    matrix isSymetric ( matrix mat);
+    matrix isIdentity (matrix mat);
+    matrix transpose  ( matrix mat);
+
+};
+#endif
